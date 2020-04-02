@@ -1,0 +1,12 @@
+.fixed {
+  position: fixed;
+}
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+}
+.hour {
+  background-color: white;
+  color: blue;
+  border-top: 1px dashed black;
+}
