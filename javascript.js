@@ -33,7 +33,7 @@ function weatherDashBoard() {
       .val(currNote);
   });
 }
-
+// to store a city name
 function saveSettings() {
   localStorage = $("#city-name").val();
 }
@@ -41,12 +41,13 @@ const temerature = [].temerature;
 const humidity = [].humidity;
 const windSpeed = [].windSpeed;
 const uvIndex = [].uvIndex;
-
+// couldn't find an api key that was for free
 function loadWeather() {
   var weather = $("#weather");
   var url = "";
   var apikey = "";
 }
+// geolocation area
 function success(position) {
   var longitude = "34.9285°S";
   var latitude = "138.6007°E";
@@ -62,6 +63,7 @@ function success(position) {
     }
   );
 }
+// run an error for no position to get the weather
 function error() {
   alert("Unable to retrieve your location for weather");
 }
