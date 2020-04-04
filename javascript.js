@@ -16,21 +16,14 @@ function weatherDashBoard() {
   weatherDashBoard();
   setInterval(weatherDashBoard, 60000);
 
-  var elementTime = $(this)
-    .parent()
-    .attr("date-time");
-  var currNote = $(this)
-    .parent()
-    .find("city-name")
-    .val();
+  var elementTime = $(this).parent().attr("date-time");
+  var currNote = $(this).parent().find("city-name").val();
   localStorage.setItem(elementTime, currNote);
 
-  $(".currentDay").each(function() {
+  $(".currentDay").each(function () {
     var elementTime = $(this).attr("date-time");
     var currNote = localStorage.getItem(elementTime);
-    $(this)
-      .find("city-name")
-      .val(currNote);
+    $(this).find("city-name").val(currNote);
   });
 }
 // to store a city name
@@ -54,7 +47,7 @@ function success(position) {
 
   $.getJSON(
     url + apikey + "/" + latitude + "," + longitude + "?units=si&callback=?",
-    function(data) {
+    function (data) {
       weather.text(
         "Based on your current location, it is" +
           data.current.temperature +
@@ -65,6 +58,6 @@ function success(position) {
 }
 // run an error for no position to get the weather
 function error() {
-  alert("Unable to retrieve your location for weather");
+  alert("Unable to retrieve your location for the weather updates");
 }
 navigator.geolocation.getCurrentPosition(success, error);
